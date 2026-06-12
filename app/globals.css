@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --blush: #FFD6E0;
+  --lavender: #E8D5FF;
+  --rose: #FF6B9D;
+  --purple: #9B59B6;
+  --cream: #FFF9F0;
+  --text: #3D1A4B;
+}
+
+body {
+  background: linear-gradient(135deg, #FFD6E0 0%, #FDECD2 25%, #E8D5FF 60%, #D4E8FF 100%);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+.font-display {
+  font-family: 'Pacifico', cursive;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #FF6B9D, #C44DD8);
+  box-shadow: 0 8px 30px rgba(255, 107, 157, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-yes:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 107, 157, 0.55);
+}
+
+.btn-no-visible {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #d1a3c8;
+  border-radius: 14px;
+  padding: 10px 24px;
+  color: #9B59B6;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(155, 89, 182, 0.15);
+  user-select: none;
+}
+
+.btn-no-visible:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #b88ab0;
+}
+
+.heart-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes cuteBounce {
+  0%, 100% { transform: translateY(0) scale(1) rotate(-5deg); }
+  30% { transform: translateY(-14px) scale(1.1) rotate(5deg); }
+  60% { transform: translateY(-6px) scale(1.05) rotate(-3deg); }
+}
+
+.cute-bounce {
+  display: inline-block;
+  animation: cuteBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.page-enter {
+  animation: pageEnter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+input[type="date"], input[type="time"] {
+  color-scheme: light;
+}
+
+select option {
+  background: white;
+  color: #3D1A4B;
+}
